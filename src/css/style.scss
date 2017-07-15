@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'grid';
+@import 'animate';
 // @import 'ionicons';
 
 /* Basic setup               */
@@ -21,7 +22,8 @@ html {
     font-family: $font-stack;
     font-size: $font-size;
     font-weight: 300;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 // use clearfix to fix the area where the child element has float property
@@ -124,6 +126,12 @@ header {
         float: left;
         margin-top: 20px;
     }
+    .logo-black {
+        height: 50px;
+        width: auto;
+        float: left;
+        margin: 5px;
+    }
     .main-nav {
         float: right;
         list-style: none;
@@ -147,6 +155,16 @@ header {
             }
         }
     }
+    .mobile-nav-icon {
+        float: right;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+        i {
+            font-size: 200%;
+            color: white;
+        }
+    }
     .hero-text-box {
         position: absolute;
         width: 1140px;
@@ -156,9 +174,37 @@ header {
     }
 }
 
+// sticky nav
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 2px darken(white, 30%);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s linear;
+    .main-nav {
+        margin-top: 22px;
+        a:link,
+        a:visited {
+            padding: 13px 0;
+            color: black;
+        }
+        a:hover {
+            border-bottom: 4px solid $primary-color;
+        }
+    }
+    .logo-black {
+        display: block;
+    }
+}
+
 // RE-USABLE COMPONENTS
 section {
-    padding-top: 80px;
+    padding: 80px 0;
 }
 
 .box {
@@ -227,7 +273,6 @@ h3 {
     display: block;
     color: $primary-color;
     margin: 10px auto;
-    font-size: 120%;
 }
 
 .icon-small {
@@ -242,41 +287,39 @@ h3 {
 }
 
 // MEALS 
-.meals-showcase {
-    list-style: none;
-    width: 100%;
-}
-
-.meals-showcase li {
-    display: block;
-    float: left;
-    width: 25%;
-}
-
-.meal-photo {
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    background: black;
-}
-
-.meal-photo img {
-    opacity: 0.7;
-    width: 100%;
-    height: auto;
-    transform: scale(1.15);
-    transition: opacity, transform 0.5s;
-}
-
-.meal-photo img:hover {
-    opacity: 1;
-    transform: scale(1.03);
+.section-meals {
+    padding: 0;
+    .meals-showcase {
+        list-style: none;
+        width: 100%;
+    }
+    .meals-showcase li {
+        display: block;
+        float: left;
+        width: 25%;
+    }
+    .meal-photo {
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: black;
+    }
+    .meal-photo img {
+        opacity: 0.7;
+        width: 100%;
+        height: auto;
+        transform: scale(1.15);
+        transition: opacity, transform 0.5s;
+    }
+    .meal-photo img:hover {
+        opacity: 1;
+        transform: scale(1.03);
+    }
 }
 
 // HOW IT WORKS
 .section-steps {
     background: darken(white, 10%);
-    padding-bottom: 60px;
 }
 
 .steps-box:first-child {
@@ -373,7 +416,6 @@ h3 {
 // SIGN UP
 .section-plans {
     background: darken(white, 20%);
-    padding-bottom: 80px;
     .plan-box {
         background: darken(white, 2%);
         border-radius: 5px;
@@ -412,6 +454,9 @@ h3 {
         }
         a {
             font-weight: 700;
+        }
+        .ion-ios-close-empty {
+            color: red;
         }
     }
 }
@@ -497,6 +542,17 @@ footer {
         color: #888;
         text-align: center;
         padding-top: 30px;
+    }
+}
+
+// animations
+section[class*='section']:not([class='section-testimonials']) {
+    .row .col {
+        opacity: 0;
+    }
+    .row .col.animated {
+        opacity: 1;
+        animation-delay: 0.1s;
     }
 }
 

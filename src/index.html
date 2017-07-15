@@ -2,6 +2,16 @@
 <html lang="en">
 
     <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/src/img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/src/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/src/img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/src/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/src/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/src/img/favicons/favicon.ico">
+        <meta name="msapplication-config" content="/src/img/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
@@ -12,24 +22,36 @@
 
     <body>
         <header>
+            <nav class="sticky">
+                <div class="row"><img src="img/logo.png" alt="Omnifood logo" class="logo-black" />
+                    <ul class="main-nav">
+                        <li><a href="#features">Food delivery</a></li>
+                        <li><a href="#steps">How it works</a></li>
+                        <li><a href="#cities">Our cities</a></li>
+                        <li><a href="#form">Sign up</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                </div>
+            </nav>
             <nav>
                 <div class="row"><img src="img/logo-white.png" alt="Omnifood logo" class="logo" />
                     <ul class="main-nav">
-                        <li><a href="">Food delivery</a></li>
-                        <li><a href="">How it works</a></li>
-                        <li><a href="">Our cities</a></li>
-                        <li><a href="">Sign up</a></li>
+                        <li><a href="#features">Food delivery</a></li>
+                        <li><a href="#steps">How it works</a></li>
+                        <li><a href="#cities">Our cities</a></li>
+                        <li><a href="#form">Sign up</a></li>
                     </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
                 </div>
             </nav>
             <div class="hero-text-box">
                 <h1>Goodbye junk food.<br/> Hello super healthy meals....</h1>
-                <a class="btn btn-full" href="#">I'm hungry</a>
-                <a class="btn btn-ghost" href="#">Show me more</a>
+                <a class="btn btn-full" href="#" id="hero-hungry">I'm hungry</a>
+                <a class="btn btn-ghost" href="#" id="hero-show-me">Show me more</a>
             </div>
         </header>
 
-        <section class="section-features">
+        <section class="section-features" id="features">
             <div class="row">
 
                 <h2>Get food fast &mdash; not fast food.</h2>
@@ -74,7 +96,7 @@
             </div>
         </section>
 
-        <section class="section-meals">
+        <section class="section-meals" id="meals">
             <ul class="meals-showcase clearfix">
                 <li>
                     <figure class="meal-photo">
@@ -121,7 +143,7 @@
             </ul>
         </section>
 
-        <section class="section-steps">
+        <section class="section-steps" id="steps">
             <div class="row">
                 <h2>How it works &mdash; Simple as 1,2,3</h2>
             </div>
@@ -130,25 +152,27 @@
                     <img src="img/app-iPhone.png" alt="Omnifood app on iPhone" class="app-screen">
                 </div>
                 <div class="col span-1-of-2 steps-box">
-                    <div class="works-step">
-                        <div>1</div>
-                        <p> Choose the subscription plan that best fits your needs and sign up today.</p>
+                    <div class="main-box">
+                        <div class="works-step">
+                            <div>1</div>
+                            <p> Choose the subscription plan that best fits your needs and sign up today.</p>
+                        </div>
+                        <div class="works-step">
+                            <div>2</div>
+                            <p>Order your delicious meal using our mobile app or website. Or you can even call us! </p>
+                        </div>
+                        <div class="works-step">
+                            <div>3</div>
+                            <p> Enjoy your meal after less than 20 minutes. See you the next time! </p>
+                        </div>
+                        <a href="#" class="btn-app"><img src="img/download-app.svg" alt="App store Button"></a>
+                        <a href="#" class="btn-app"><img src="img/download-app-android.png" alt="Play store Button"></a>
                     </div>
-                    <div class="works-step">
-                        <div>2</div>
-                        <p>Order your delicious meal using our mobile app or website. Or you can even call us! </p>
-                    </div>
-                    <div class="works-step">
-                        <div>3</div>
-                        <p> Enjoy your meal after less than 20 minutes. See you the next time! </p>
-                    </div>
-                    <a href="#" class="btn-app"><img src="img/download-app.svg" alt="App store Button"></a>
-                    <a href="#" class="btn-app"><img src="img/download-app-android.png" alt="Play store Button"></a>
                 </div>
             </div>
         </section>
 
-        <section class="section-cities">
+        <section class="section-cities" id="cities">
             <div class="row">
                 <h2>We're currently in these cities</h2>
             </div>
@@ -208,7 +232,7 @@
             </div>
         </section>
 
-        <section class="section-testimonials">
+        <section class="section-testimonials" id="testimonials">
             <div class="row">
                 <h2>Our customers can't live without us</h2>
             </div>
@@ -237,7 +261,7 @@
             </div>
         </section>
 
-        <section class="section-plans">
+        <section class="section-plans" id="plans">
             <div class="row">
                 <h2>Start eating healthy today</h2>
             </div>
@@ -305,7 +329,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="form">
             <div class="row">
                 <h2>We're happy to hear from you</h2>
             </div>
@@ -371,7 +395,7 @@
             </form>
         </section>
 
-        <footer>
+        <footer id="footer">
             <div class="row">
                 <div class="col span-1-of-2">
                     <ul class="footer-nav">
