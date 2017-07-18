@@ -6,6 +6,27 @@ import './waypoints';
 
 
 $(document).ready(function () {
+
+    var width = $(window).width();
+
+    var offset = 0;
+    if (width < 768)
+        offset = 60
+
+    // $(window).on('resize', function () {
+
+    //     var display = $('.main-nav').css('display');
+    //     console.log('display:::', display);
+    //     if (width > 768 && display === 'none') {
+    //         $('.main-nav').css('display', 'block');
+    //         offset = 0;
+    //     } else if (width < 768) {
+    //         $('.main-nav').css('display', 'none');
+    //         offset = 60;
+    //     }
+    //     console.log('offset::', offset);
+    // });
+
     // for the sticky navigation
     $('#features').waypoint(function (direction) {
         if (direction === 'down') {
@@ -21,11 +42,13 @@ $(document).ready(function () {
     // scroll on buttons
 
     $('#hero-hungry').click(() => {
-        $('html, body').animate({ scrollTop: $('#plans').offset().top }, 1000);
+
+        $('html, body').animate({ scrollTop: $('#plans').offset().top - offset }, 1000);
+
     });
 
     $('#hero-show-me').click(() => {
-        $('html, body').animate({ scrollTop: $('#features').offset().top }, 500);
+        $('html, body').animate({ scrollTop: $('#features').offset().top - offset }, 500);
     });
 
     $(function () {
@@ -40,12 +63,13 @@ $(document).ready(function () {
                 console.log('target', target);
                 target = target.length ? target : $('[name=]' + this.hash.slice(1) + ']');
                 if (target.length) {
-                    $('html, body').animate({ scrollTop: target.offset().top }, 1000);
+                    $('html, body').animate({ scrollTop: target.offset().top - offset }, 1000);
                     return false;
                 }
             }
         });
     });
+
 
 
     // Animation on scroll

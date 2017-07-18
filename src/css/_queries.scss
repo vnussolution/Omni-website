@@ -14,7 +14,6 @@
 // small tablet to big tablet : from 768px to 1023px
 @media only screen and (max-width: 1023px) {
     body {
-        font-size: $font-size*0.8;
         section {
             padding: 60px 0;
         }
@@ -39,7 +38,7 @@
                     font-size: $font-size*2;
                 }
                 .plan-price-meal {
-                    font-size: $font-size*0.8;
+                    // font-size: $font-size*0.8;
                 }
             }
         }
@@ -55,7 +54,7 @@
 // small phones to small tablets: from 481px to 767px
 @media only screen and (max-width: 767px) {
     body {
-        font-size: $font-size*0.6;
+        font-size: $font-size*0.8;
         section {
             padding: 30px 0;
         }
@@ -107,6 +106,9 @@
                     margin-top: 10px;
                 }
             }
+        }
+        .section-cities {
+            font-size: $font-size*0.6;
         }
         .section-steps {
             .steps-box:first-child {
